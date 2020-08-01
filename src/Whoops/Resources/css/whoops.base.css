@@ -379,7 +379,7 @@ header.header-expand {
 }
 
 /* prettify code style
- * Uses the Doxy theme as a base */
+Uses the Doxy theme as a base */
 pre .str,
 code .str {
   color: #bcd42a;
@@ -655,4 +655,3 @@ pre.sf-dump {
 .search-for-help li a svg path {
   background-size: contain;
 }
-
