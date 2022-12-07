@@ -31,7 +31,7 @@ class RunTest extends TestCase
      * @param  string    $message
      * @return Exception
      */
-    protected function getException($message = null)
+    protected function getException($message = "")
     {
         // HHVM does not support mocking exceptions
         // Since we do not use any additional features of Mockery for exceptions,
@@ -93,13 +93,15 @@ class RunTest extends TestCase
     }
 
     /**
-     * @expectedException InvalidArgumentException
      * @covers Whoops\Run::pushHandler
      */
     public function testPushInvalidHandler()
     {
         $run = $this->getRunInstance();
-        $run->pushHandler($banana = 'actually turnip');
+
+        $this->expectExceptionOfType('InvalidArgumentException');
+
+        $run->pushHandler('actually turnip');
     }
 
     /**
@@ -180,7 +182,6 @@ class RunTest extends TestCase
 
     /**
      * @covers Whoops\Run::unregister
-     * @expectedException Exception
      */
     public function testUnregisterHandler()
     {
@@ -191,6 +192,9 @@ class RunTest extends TestCase
         $run->pushHandler($handler);
 
         $run->unregister();
+
+        $this->expectExceptionOfType('Exception');
+
         throw $this->getException("I'm not supposed to be caught!");
     }
 
@@ -402,6 +406,7 @@ class RunTest extends TestCase
 
     /**
      * @covers Whoops\Run::handleError
+     * @requires PHP < 8
      */
     public function testGetSilencedError()
     {
@@ -491,10 +496,40 @@ class RunTest extends TestCase
 
     /**
      * @covers Whoops\Run::sendHttpCode
-     * @expectedException InvalidArgumentException
      */
     public function testSendHttpCodeWrongCode()
     {
+        $this->expectExceptionOfType('InvalidArgumentException');
+
         $this->getRunInstance()->sendHttpCode(1337);
+    }
+
+    /**
+     * @covers Whoops\Run::sendHttpCode
+     */
+    public function testSendExitCode()
+    {
+        $run = $this->getRunInstance();
+        $run->sendExitCode(42);
+        $this->assertEquals(42, $run->sendExitCode());
+    }
+
+    /**
+     * @covers Whoops\Run::sendExitCode
+     */
+    public function testSendExitCodeDefaultCode()
+    {
+        $run = $this->getRunInstance();
+        $this->assertEquals(1, $run->sendExitCode());
+    }
+
+    /**
+     * @covers Whoops\Run::sendExitCode
+     */
+    public function testSendExitCodeWrongCode()
+    {
+        $this->expectExceptionOfType('InvalidArgumentException');
+
+        $this->getRunInstance()->sendExitCode(255);
     }
 }
