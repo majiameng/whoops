@@ -4,10 +4,10 @@
  * @author Filipe Dobreira <http://github.com/filp>
  */
 
-namespace Whoops\Handler;
+namespace Tinymeng\Whoops\Handler;
 
-use Whoops\Exception\Inspector;
-use Whoops\RunInterface;
+use Tinymeng\Whoops\Exception\Inspector;
+use Tinymeng\Whoops\RunInterface;
 
 interface HandlerInterface
 {

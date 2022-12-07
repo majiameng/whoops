@@ -4,16 +4,16 @@
  * @author Filipe Dobreira <http://github.com/filp>
  */
 
-namespace Whoops\Handler;
+namespace Tinymeng\Whoops\Handler;
 
 use InvalidArgumentException;
 use RuntimeException;
 use Symfony\Component\VarDumper\Cloner\AbstractCloner;
 use Symfony\Component\VarDumper\Cloner\VarCloner;
 use UnexpectedValueException;
-use Whoops\Exception\Formatter;
-use Whoops\Util\Misc;
-use Whoops\Util\TemplateHelper;
+use Tinymeng\Whoops\Exception\Formatter;
+use Tinymeng\Whoops\Util\Misc;
+use Tinymeng\Whoops\Util\TemplateHelper;
 
 class PrettyPageHandler extends Handler
 {

@@ -4,9 +4,9 @@
  * @author Filipe Dobreira <http://github.com/filp>
  */
 
-namespace Whoops\Exception;
+namespace Tinymeng\Whoops\Exception;
 
-use Whoops\Util\Misc;
+use Tinymeng\Whoops\Util\Misc;
 
 class Inspector
 {

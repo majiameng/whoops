@@ -4,17 +4,17 @@
  * @author Filipe Dobreira <http://github.com/filp>
  */
 
-namespace Whoops;
+namespace Tinymeng\Whoops;
 
 use InvalidArgumentException;
 use Throwable;
-use Whoops\Exception\ErrorException;
-use Whoops\Exception\Inspector;
-use Whoops\Handler\CallbackHandler;
-use Whoops\Handler\Handler;
-use Whoops\Handler\HandlerInterface;
-use Whoops\Util\Misc;
-use Whoops\Util\SystemFacade;
+use Tinymeng\Whoops\Exception\ErrorException;
+use Tinymeng\Whoops\Exception\Inspector;
+use Tinymeng\Whoops\Handler\CallbackHandler;
+use Tinymeng\Whoops\Handler\Handler;
+use Tinymeng\Whoops\Handler\HandlerInterface;
+use Tinymeng\Whoops\Util\Misc;
+use Tinymeng\Whoops\Util\SystemFacade;
 
 final class Run implements RunInterface
 {

@@ -4,7 +4,7 @@
  * @author Filipe Dobreira <http://github.com/filp>
  */
 
-namespace Whoops\Util;
+namespace Tinymeng\Whoops\Util;
 
 class SystemFacade
 {

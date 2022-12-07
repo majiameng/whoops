@@ -4,10 +4,10 @@
  * @author Filipe Dobreira <http://github.com/filp>
  */
 
-namespace Whoops\Handler;
+namespace Tinymeng\Whoops\Handler;
 
 use SimpleXMLElement;
-use Whoops\Exception\Formatter;
+use Tinymeng\Whoops\Exception\Formatter;
 
 /**
  * Catches an exception and converts it to an XML

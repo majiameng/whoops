@@ -4,11 +4,11 @@
  * @author Filipe Dobreira <http://github.com/filp>
  */
 
-namespace Whoops;
+namespace Tinymeng\Whoops;
 
 use InvalidArgumentException;
-use Whoops\Exception\ErrorException;
-use Whoops\Handler\HandlerInterface;
+use Tinymeng\Whoops\Exception\ErrorException;
+use Tinymeng\Whoops\Handler\HandlerInterface;
 
 interface RunInterface
 {

@@ -6,11 +6,11 @@
 * @author Pierre-Yves Landuré <https://howto.biapy.com/>
 */
 
-namespace Whoops\Handler;
+namespace Tinymeng\Whoops\Handler;
 
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
-use Whoops\Exception\Frame;
+use Tinymeng\Whoops\Exception\Frame;
 
 /**
 * Handler outputing plaintext error messages. Can be used
