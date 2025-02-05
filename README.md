@@ -1,8 +1,14 @@
 # whoops
 PHP errors for cool kids
 
-# tinymeng 安装修改版本，兼容QQ邮箱email
+# tinymeng 安装修改版本
+
 composer require tinymeng/whoops dev-master
+
+### 1.兼容QQ邮箱、163邮箱、企微邮箱查看email查看邮件样式问题
+### 2.查看更多参数以助于调试和bug查找
+
+-----
 
 [![Total Downloads](https://img.shields.io/packagist/dm/filp/whoops.svg)](https://packagist.org/packages/filp/whoops)
 [![Latest Version](http://img.shields.io/packagist/v/filp/whoops.svg)](https://packagist.org/packages/filp/whoops)
