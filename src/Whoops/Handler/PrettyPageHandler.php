@@ -218,6 +218,12 @@ class PrettyPageHandler extends Handler
         $inspector = $this->getInspector();
         $frames = $this->getExceptionFrames();
         $code = $this->getExceptionCode();
+        $inputRaw = file_get_contents("php://input");
+        if(is_array(json_decode($inputRaw,true))){
+            $inputRawData = json_decode($inputRaw,true);
+        }else{
+            $inputRawData[] = $inputRaw;
+        }
 
         // List of variables that will be passed to the layout template.
         $vars = [
@@ -263,6 +269,7 @@ class PrettyPageHandler extends Handler
             "tables"      => [
                 "GET Data"              => $this->masked($_GET, '_GET'),
                 "POST Data"             => $this->masked($_POST, '_POST'),
+                "Input Raw Data"        => $this->masked($inputRawData, '_POST'),
                 "Files"                 => isset($_FILES) ? $this->masked($_FILES, '_FILES') : [],
                 "Cookies"               => $this->masked($_COOKIE, '_COOKIE'),
                 "Session"               => isset($_SESSION) ? $this->masked($_SESSION, '_SESSION') :  [],
